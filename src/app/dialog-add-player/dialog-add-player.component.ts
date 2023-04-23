@@ -10,8 +10,8 @@ export class DialogAddPlayerComponent {
 name: string = '';
 
 constructor(
-  public dialogRef: MatDialogRef<DialogAddPlayerComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: any) {}
+  public dialogRef: MatDialogRef<DialogAddPlayerComponent>
+) {}
 
   onNoClick(): void {
     this.dialogRef.close();

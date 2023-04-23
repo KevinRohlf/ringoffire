@@ -10,11 +10,15 @@
         margin-left: 16px;
     }
     
-    background-color: orange;
+    background-color: lightgray;
     img {
-        height: 100px;
-        width: 100px;
+        height: 70px;
+        width: 70px;
         object-fit: cover;
         border-radius: 100%;
     }
+}
+
+.player-active {
+    background-color: orange !important;
 }
