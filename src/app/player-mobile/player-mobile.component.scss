@@ -1,0 +1,69 @@
+.player {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    animation: dropup 1s ease;
+    
+
+
+    span {
+        margin-top: -20px;
+        font-size: 14px;
+    }
+    
+    background-color: lightgray;
+    img {
+        height: 35px;
+        width: 35px;
+        object-fit: cover;
+        border-radius: 100%;
+        display: none;
+    }
+}
+
+@keyframes dropup {
+    from {
+        height: 120px;
+    }
+    to {
+        height: 70px;
+    }
+}
+
+.player-active {
+    background-color: orange !important;
+    height: 120px;
+    width: 100px;
+    animation: dropdown 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    img{
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 100%;
+        display: block;
+    }
+}
+
+@keyframes dropdown {
+    from {
+        height: 70px;
+    }
+    
+    to {
+        height: 120px;
+    }
+}

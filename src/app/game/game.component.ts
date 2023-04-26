@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  
+
   game: Game;
   firestore: Firestore = inject(Firestore);
   items$: Observable<any>;
@@ -21,12 +21,6 @@ export class GameComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, public dialog: MatDialog) {
-    // const aCollection = collection(this.firestore, 'games')
-    // this.items$ = collectionData(aCollection);
-    // this.items$.subscribe((game) => {
-    //   this.item = game;
-    //   console.log(this.item)
-    // })
   }
 
   ngOnInit(): void {
@@ -51,16 +45,16 @@ export class GameComponent implements OnInit {
 
   newGame() {
     this.game = new Game();
-    // let coll = collection(this.firestore, 'games')
-    // addDoc(coll, this.game.toJson());
   }
 
   takeCard() {
-    if (!this.game.pickCardAnimation) {
+    if (!this.game.pickCardAnimation && this.game.stack.length > 0) {
       this.game.currentCard = this.game.stack.pop();
       this.game.pickCardAnimation = true;
-      this.game.currentPlayer++;
-      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+      if (this.game.players.length > 0) {
+        this.game.currentPlayer++;
+        this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+      }
       this.saveGame();
       setTimeout(() => {
         this.game.playedCards.push(this.game.currentCard);

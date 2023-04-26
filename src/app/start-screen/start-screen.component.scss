@@ -7,6 +7,12 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 1200px) {
+        overflow: hidden;
+    }
+
+
+
     img {
         height: 100vh;
     }
@@ -19,9 +25,19 @@
     bottom: 10vh;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 960px) {
+        overflow: hidden;
+    }
+
+    h2 {
+        position: absolute;
+        top: 35%;
+        font-size: 35px;
+    }
     
     img{
-        width: 20vw;
+        width: 350px;
         height: auto;
 
         &:hover {

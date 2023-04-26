@@ -17,6 +17,10 @@
         object-fit: cover;
         border-radius: 100%;
     }
+
+    @media (max-width: 720px) {
+        
+    }
 }
 
 .player-active {
