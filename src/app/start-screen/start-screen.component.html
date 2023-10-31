@@ -1,5 +1,18 @@
 <div class="start-screen">
     <img src="assets/img/startbox.svg">
+    <div>
+        <div>
+            <input type="text" #input>
+            <button (click)="join()">Join</button>
+        </div>
+        <div *ngIf="toShort">
+            Invalid game ID
+        </div>
+        <div *ngIf="gameNotFound">
+            Game not found
+        </div>
+
+    </div>
     <div class="start-label-box">
         <h2>Start</h2>
         <img (click)="newGame()" src="assets/img/startlabel.svg">
